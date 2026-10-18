@@ -1,0 +1,25 @@
+CXX = g++
+CXXFLAGS = -fsanitize=address -g
+TARGET = 2205009_main
+SRC = 2205009_main.cpp
+INPUT = sample_input.txt
+OUTPUT = output.txt
+EXPECTED = sample_output.txt
+
+all: run check
+
+build: $(TARGET)
+
+$(TARGET): $(SRC) 2205009_ScopeTable.h 2205009_SymbolTable.h 2205009_SymbolInfo.h
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET) $(INPUT) $(OUTPUT)
+
+check:
+	@echo "--- Checking Differences ---"
+	diff $(OUTPUT) $(EXPECTED)
+	@echo "Success: No differences found!"
+
+clean:
+	rm -f $(TARGET) $(OUTPUT)

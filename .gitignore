@@ -1,0 +1,42 @@
+# ==============================================================================
+#  C-Subset Compiler - .gitignore
+# ==============================================================================
+
+# Compiled binaries
+bin/
+build/
+*.out
+*.elf
+*.o
+*.a
+*.so
+
+# Assembly and temporary intermediate files
+code.asm
+optimized_code.asm
+glb.txt
+lexLogFile.txt
+log.txt
+error.txt
+.verify_tmp/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Python / Virtualenv artifacts (if any)
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+antlr4_venv/
+.antlr/
+
+# Archive files
+*.zip
+*.tar.gz
